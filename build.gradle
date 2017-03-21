@@ -13,9 +13,8 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
 
-war {
+jar {
 	baseName = 'spring-boot-attitude'
 	version = '0.0.1-SNAPSHOT'
 }
@@ -43,6 +42,11 @@ dependencies {
 	compile('com.fasterxml.jackson.core:jackson-databind:2.8.6')
 
 	//freemarker
-	compile('org.springframework:spring-context-support')
+	compile('org.springframework:spring-context-support:4.3.7.RELEASE')
 	compile('org.freemarker:freemarker:2.3.23')
+
+	//jpa
+	compile('org.hibernate:hibernate-core:5.2.9.Final')
+	compile 'org.hibernate:hibernate-entitymanager:5.2.9.Final'
+	compile "org.springframework:spring-orm:4.3.7.RELEASE"
 }
