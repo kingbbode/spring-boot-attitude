@@ -34,11 +34,6 @@ dependencies {
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
-	//Jackson for Json
-	compile('com.fasterxml.jackson.core:jackson-annotations:2.8.0')
-	compile('com.fasterxml.jackson.core:jackson-core:2.8.6')
-	compile('com.fasterxml.jackson.core:jackson-databind:2.8.6')
-
 	//freemarker
 	compile('org.springframework:spring-context-support:4.3.7.RELEASE')
 	compile('org.freemarker:freemarker:2.3.23')
