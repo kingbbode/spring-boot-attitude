@@ -31,11 +31,25 @@ configurations {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
-	//compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
 
-	//freemarker
+	//JACKSON
+	compile('com.fasterxml.jackson.core:jackson-annotations:2.8.0')
+	compile('com.fasterxml.jackson.core:jackson-core:2.8.6')
+	compile('com.fasterxml.jackson.core:jackson-databind:2.8.6')
+
+	//FREEMARKER
 	compile('org.springframework:spring-context-support:4.3.7.RELEASE')
 	compile('org.freemarker:freemarker:2.3.23')
+
+	//MYSQL
+	runtime('mysql:mysql-connector-java')
+
+	//TEST
+	testCompile ('junit:junit:4.12')
+	testCompile ('org.springframework:spring-test:4.3.7.RELEASE')
+	testCompile ('org.hamcrest:hamscrest-core:1.3')
+	testCompile ('org.hamcrest:hamscrest-library:1.3')
+
 }
