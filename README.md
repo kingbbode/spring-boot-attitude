@@ -75,7 +75,7 @@
 
 테스트가 정상 동작한다!
 
-Step 4. auto configuration
+# Step 4. auto configuration
 
 spring boot auto configure dependency를 들여다 보았다.
 
