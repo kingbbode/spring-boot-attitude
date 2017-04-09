@@ -22,7 +22,7 @@
 
 # Step 1. Reference Guide
 
-![reference guide](https://github.com/kingbbode/backandfront/blob/master/img/reference.png)
+![reference guide](https://github.com/kingbbode/spring-boot-attitude/tree/master/img/reference.png)
 
 레퍼런스 가이드를 보았다. **boot에서 freemarker starter dependency를 제공한다**
 
@@ -32,7 +32,7 @@
 
 # Step 2. Release Note
 
-![reference guide](https://github.com/kingbbode/backandfront/blob/master/img/release.png)
+![reference guide](https://github.com/kingbbode/spring-boot-attitude/tree/master/img/release.png)
 
 릴리즈 노트를 보았다 **그동안 귀찮게 ObjectMapper에 등록하던 Jackson을 Default로 지원한다는 내용이다!**
 
