@@ -10,9 +10,9 @@
 - Step 3. pom.xml
     - start test
 - Step 4. auto configuration
-    - datasource
-- Step 5. freemarker customize
-    - template path
+  - freemarker
+- Step 5. properties setting
+  - datasource
     
 # Step 0. Legacy Boot
 
