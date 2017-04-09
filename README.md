@@ -19,3 +19,13 @@
 그럭 저럭 구성한 기본 환경 설정!
 
 테스트 코드는 정상! **그러나!**
+
+# Step 1. Reference Guide
+
+![reference guide](https://github.com/kingbbode/backandfront/blob/master/img/reference.png)
+
+레퍼런스 가이드를 보았다. **boot에서 freemarker starter dependency를 제공한다**
+
+그래서 `build.gradle`에서 freemarker dependency를 starter dependency로 대체했다.
+
+테스트 코드도 역시 성공!
