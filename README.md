@@ -13,3 +13,9 @@
     - datasource
 - Step 5. freemarker customize
     - template path
+    
+# Step 0. Legacy Boot
+
+그럭 저럭 구성한 기본 환경 설정!
+
+테스트 코드는 정상! **그러나!**
