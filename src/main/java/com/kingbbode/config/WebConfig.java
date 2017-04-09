@@ -21,17 +21,6 @@ import java.util.List;
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter{
 
-    @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        final MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-        final ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        converter.setObjectMapper(objectMapper);
-        converters.add(converter);
-        super.configureMessageConverters(converters);
-    }
-
-
     @Bean
     public ViewResolver viewResolver() {
         FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
