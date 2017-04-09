@@ -75,7 +75,7 @@
 
 테스트가 정상 동작한다!
 
-Step 4. auto configuration
+# Step 4. auto configuration
 
 spring boot auto configure dependency를 들여다 보았다.
 
@@ -107,3 +107,28 @@ public static final String DEFAULT_SUFFIX = ".ftl";
 그래서 freemarker 관련 설정을 하고 있는 class 자체를 지워보았다.
 
 테스트 코드 성공!!
+
+# Step 5. properties setting
+
+boot의 spring.factories를 보고 Datasource의 autoconfiguration이 있다는 것을 알았다.
+
+properties class가 있는 것을 보아 properties를 통해 값을 주입받고 있다는 것을 알 수 있다
+
+이번에는 직접 들여다보지 않고 [docs](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)를 들여다보았다.
+
+```
+# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring.datasource.continue-on-error=false # Do not stop if an error occurs while initializing the database.
+spring.datasource.data= # Data (DML) script resource references.
+spring.datasource.data-username= # User of the database to execute DML scripts (if different).
+spring.datasource.data-password= # Password of the database to execute DML scripts (if different).
+spring.datasource.dbcp2.*= # Commons DBCP2 specific settings
+spring.datasource.driver-class-name= # Fully qualified name of the JDBC driver. Auto-detected based on the URL by default.
+
+등등
+
+```
+
+저쪽만 내가 설정해주면 Bean을 직접 생성해주지 않아도 되는것이구나! 바로 기존 설정 클래스를 삭제하고 properties로 설정해보았다.
+
+테스트 코드 성공!
