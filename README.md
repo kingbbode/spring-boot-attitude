@@ -39,3 +39,38 @@
 그래서 Jackson 관련 설정들을 모두 지워보았다.
 
 테스트 코드가 성공했다!
+
+# Step 3. pom.xml
+
+나는 starter test dependency와 내가 자주쓰던 test 관련 dependency들을 설정해놓았다.
+
+그런데 starter dependency에서 어떤 dependency를 설정해주는지 궁금했다. 그래서 pom.xml을 들여다보았다.
+
+```xml
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-library</artifactId>
+    </dependency>
+```
+
+헉! 내가 직접 dependency로 설정해주었던 dependency도 모두 starter dependency가 제공해주고 있다!
+
+그래서 직접 설정했던 부분은 지워보았다.
+
+테스트가 정상 동작한다!
