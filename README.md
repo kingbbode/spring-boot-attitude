@@ -10,9 +10,9 @@
 - Step 3. pom.xml
     - start test
 - Step 4. auto configuration
+    - freemarker
+- Step 5. properties setting
     - datasource
-- Step 5. freemarker customize
-    - template path
     
 # Step 0. Legacy Boot
 
@@ -74,3 +74,36 @@
 그래서 직접 설정했던 부분은 지워보았다.
 
 테스트가 정상 동작한다!
+
+Step 4. auto configuration
+
+spring boot auto configure dependency를 들여다 보았다.
+
+이곳에서 freemarker 패키지가 보인다! 
+
+들여다보니 내가 직접 설정했던 viewResolver를 자동으로 설정해주고 있다.
+
+```java
+@Bean
+@ConditionalOnMissingBean(name = "freeMarkerViewResolver")
+@ConditionalOnProperty(name = "spring.freemarker.enabled", matchIfMissing = true)
+public FreeMarkerViewResolver freeMarkerViewResolver() {
+    FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
+    this.properties.applyToViewResolver(resolver);
+    return resolver;
+}
+```
+
+거기에 properties class를 들여다보니 내가 해주고 있는 설정이 자동 설정의 기본 값과 같다!
+
+```java
+public static final String DEFAULT_TEMPLATE_LOADER_PATH = "classpath:/templates/";
+
+public static final String DEFAULT_PREFIX = "";
+
+public static final String DEFAULT_SUFFIX = ".ftl";
+```
+
+그래서 freemarker 관련 설정을 하고 있는 class 자체를 지워보았다.
+
+테스트 코드 성공!!
